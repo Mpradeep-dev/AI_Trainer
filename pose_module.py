@@ -52,7 +52,7 @@ class detector():
                 self.lis.append([id,cx,cy])
                 #if id==0:
                     #cv.circle(img,(cx,cy),10,(0,100,200),-1)
-            return self.lis
+        return self.lis
 
     def find_angle(self,p1,p2,p3,img,draw=True):
 
@@ -87,7 +87,7 @@ def main():
         isTrue,img=vid.read()
         img = cv.resize(img, (640, 480))
         img=dec.find_pose(img)
-        lis=dec.draw_con(img,False)
+        lis=dec.get_conn(img,False)
         if len(lis)!=0:
             print(lis[14])
             cv.circle(img,(lis[14][1],lis[14][2]),20,(250,0,0),-1)
